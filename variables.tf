@@ -54,7 +54,7 @@ variable "tfc_agent_version" {
 variable "tfc_address" {
   type        = string
   description = "Hostname of self-hosted TFE instance. Leave default if TFC is in use."
-  default     = "app.terraform.io"
+  default     = "https://app.terraform.io"
 }
 
 variable "number_of_agents" {

@@ -14,3 +14,39 @@ resource "aws_security_group_rule" "egress_https" {
 
   security_group_id = aws_security_group.agents.id
 }
+
+
+resource "aws_security_group_rule" "egress_https_f5" {
+  type        = "egress"
+  from_port   = 8443
+  to_port     = 8443
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "Allow HTTPS traffic egress F5."
+
+  security_group_id = aws_security_group.agents.id
+}
+
+
+resource "aws_security_group_rule" "egress_dns_tcp" {
+  type        = "egress"
+  from_port   = 53
+  to_port     = 53
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "Allow HTTPS traffic egress F5."
+
+  security_group_id = aws_security_group.agents.id
+}
+
+
+resource "aws_security_group_rule" "egress_dns_udp" {
+  type        = "egress"
+  from_port   = 53
+  to_port     = 53
+  protocol    = "udp"
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "Allow HTTPS traffic egress F5."
+
+  security_group_id = aws_security_group.agents.id
+}
